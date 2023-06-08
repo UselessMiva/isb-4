@@ -28,8 +28,8 @@ if __name__ == "__main__":
         settings = read_settings()
     if settings:
         if args.card_number_enumeration:
-            hash = read_from_txt_file(settings['hash'])
-            bins = read_list(settings['bin'])
+            hash = settings['hash']
+            bins = settings['bin']
             last_four_numbers = read_from_txt_file(settings['last_four_numbers'])
             card_number = enumerate_card_number(hash, bins, last_four_numbers, args.card_number_enumeration)
             if card_number:
@@ -38,8 +38,8 @@ if __name__ == "__main__":
             else:
                 logging.info("Не удалось найти номер карты")
         elif args.statistics:
-            hash = read_from_txt_file(settings['hash'])
-            bins = read_list(settings['bin'])
+            hash = settings['hash']
+            bins = settings['bin']
             last_four_numbers = read_from_txt_file(settings['last_four_numbers'])
             for i in range(1, 21):
                 t1 = time.time()

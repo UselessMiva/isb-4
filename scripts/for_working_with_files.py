@@ -7,10 +7,10 @@ logger.setLevel('INFO')
 
 def read_from_txt_file(file_name: str) -> str:
     """
-    Функция считывает данные из txt файла
-    :param file_name: Путь к файлу
-    :return: Строка с данными
-    """
+        Функция считывает данные из txt файла
+        :param file_name: Путь к файлу
+        :return: Строка с данными
+        """
     try:
         with open(file_name, 'r') as f:
             data = f.read()
@@ -19,14 +19,13 @@ def read_from_txt_file(file_name: str) -> str:
         logging.warning(f"{err} Не удалось считать данные")
     return data
 
-
 def write_to_txt_file(data: str, file_name: str) -> None:
     """
-    Функция записывает данные в txt файл
-    :param data: Данные для записи
-    :param file_name: Путь к файлу
-    :return: Функция ничего не возвращает
-    """
+       Функция записывает данные в txt файл
+       :param data: Данные для записи
+       :param file_name: Путь к файлу
+       :return: Функция ничего не возвращает
+       """
     try:
         with open(file_name, 'w') as f:
             f.write(data)
@@ -37,11 +36,10 @@ def write_to_txt_file(data: str, file_name: str) -> None:
 
 def read_list(file_name: str) -> list:
     """
-    Функция считывает кортеж из файла
-    :param file_name: Путь к файлу
-    :return: Кортеж
-    """
-    data = []
+        Функция считывает кортеж из файла
+        :param file_name: Путь к файлу
+        :return: Кортеж
+        """
     try:
         with open(file_name, 'r') as f:
             data = f.readlines()
